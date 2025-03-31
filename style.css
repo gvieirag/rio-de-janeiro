@@ -1,0 +1,541 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    text-decoration: none;
+    font-family: "Poppins", sans-serif;
+
+
+}
+
+li {
+
+    font-size: 20px;
+
+}
+
+.universidade {
+
+    font-size: 10px;
+    margin-top: 100px;
+
+}
+
+.carnaval {
+
+    font-size: 15px;
+    margin-top: 180px;
+
+}
+
+.carnaval li {
+
+    font-size: 17px;
+
+
+
+}
+
+
+.icones li {
+
+    font-size: 17.2px;
+
+}
+
+body {
+
+    background-color: #000;
+    color: #eee;
+    font-size: 12px;
+    height: 100vh;
+
+}
+
+header {
+    width: 80%;
+    height: 50px;
+    display: flex;
+    align-items: center;
+    position: relative;
+    z-index: 2;
+    margin: auto;
+
+}
+
+.list-item {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    min-height: 100vh;
+    opacity: 0;
+    pointer-events: none;
+    transition: opacity 0.5s ease;
+}
+
+.list-item.active {
+    opacity: 1;
+    pointer-events: auto;
+    z-index: 1;
+}
+
+
+.container {
+
+    min-height: 100vh;
+    width: 100vw;
+    height: 100vh;
+    margin-top: -50px;
+    overflow: auto;
+    background-position: center top;
+    background-repeat: no-repeat;
+    height: 100vh;
+}
+
+.container .list .list-item {
+    width: 100%;
+    min-height: 100%;
+    position: absolute;
+    flex-direction: column;
+    justify-content: center;
+    display: flex;
+
+}
+
+.container .list .list-item img {
+    object-fit: cover;
+    width: 100%;
+    max-height: 100%;
+    filter: brightness (50%);
+
+}
+
+
+
+.container .list .list-item .content {
+    position: absolute;
+    top: 20%;
+    right: 10%;
+    padding-right: 30%;
+    width: 80%;
+    color: #eee;
+    text-shadow: 0 5px 10px #000400;
+}
+
+img {
+    filter: brightness(20%);
+    object-fit: cover;
+
+}
+
+.video-bg {
+
+    filter: brightness(80%);
+    background-size: cover;
+}
+
+.imgitem {
+
+    filter: brightness(80%);
+    background-repeat: no-repeat;
+    object-fit: cover;
+    height: 100vh;
+    background-size: cover;
+
+}
+
+.container .list .list-item .title {
+
+    font-size: 3em;
+    font-weight: 700;
+    line-height: 1.3em;
+    padding-bottom: 5px;
+    padding-top: -10px;
+    margin-top: -90px;
+}
+
+.container .list .list-item .description {
+
+    font-size: 1.6em;
+    height: 100px;
+    width: auto;
+    padding-top: 6px;
+}
+
+
+.container .arrows {
+
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    position: absolute;
+    bottom: 120px;
+    left: 100px;
+    height: 1000px;
+
+}
+
+.container .arrows button {
+
+    border-radius: 10px;
+    border: none;
+    padding: 12px 17px;
+    background-color: #eee4;
+    color: #eee;
+    cursor: pointer;
+    font-weight: 700;
+    font-size: 1.5em;
+    margin-right: 60px;
+    margin-bottom: 70px;
+    margin-left: -60px;
+
+
+}
+
+.container .arrows button:hover {
+
+    background-color: #eee;
+    color: #000;
+    transition: 0.7s;
+
+
+}
+
+/*movimento da tumb*/
+
+.container.next .thumb {
+    animation: effectNextThumb 0.5s linear 1 forwards;
+
+}
+
+@keyframes effectNextThumb {
+
+    from {
+        transform: translateX(150px);
+    }
+
+}
+
+/* movimento ultima thumb */
+
+.container.next .thumb .thumb-item:nth-last-child(1) {
+
+    animation: effectLastThumb 0.5S linear 1 forwards;
+}
+
+@keyframes effectLastThumb {
+
+    from {
+
+        width: 0;
+        opacity: 0;
+
+    }
+
+}
+
+.container .list .list-item:nth-last-child(1) .content .title,
+.container .list .list-item:nth-last-child(1) .content .description,
+.container .list .list-item:nth-last-child(1) .content .button {
+    transform: translateY(50px);
+    filter: blur(20px);
+    opacity: 0;
+    animation: showContent 0.5s 1s linear 1 forwards;
+}
+
+@keyframes showContent {
+
+    to {
+
+        transform: translateY(0);
+        filter: blur(0);
+        opacity: 1;
+
+    }
+
+
+}
+
+.list-item.active .title,
+.list-item.active .description,
+.list-item.active li {
+    transform: translateY(50px);
+    filter: blur(20px);
+    opacity: 0;
+    animation: showContent 0.6s ease forwards;
+}
+
+.list-item.active .title {
+    animation-delay: 0.3s;
+}
+
+.list-item.active .description {
+    animation-delay: 0.6s;
+}
+
+
+@keyframes showinImage {
+    to {
+        bottom: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        border-radius: 0;
+    }
+
+}
+
+.imagem-fixa {
+
+    filter: brightness(1);
+    max-width: 400px;
+    max-height: 198px;
+    margin-left: 900px;
+    border-radius: 20px;
+    margin-bottom: -300px;
+    margin-top: 20px;
+}
+
+
+.imagem-fixa2 {
+
+    filter: brightness(1);
+    max-width: 200px;
+    margin-left: 80px;
+    margin-top: 100px;
+    border-radius: 10px;
+    margin-bottom: 300px;
+    margin-top: 500;
+}
+
+.img-comidas  {
+
+    filter: brightness(1);
+    margin: -650px;
+   
+}
+
+
+.img-comidas2 {
+
+    filter: brightness(1);
+    margin: 300px;
+    margin-bottom: 20px;
+}
+
+.img-uni  {
+
+    filter: brightness(1);
+    max-width: 400px;
+    max-height: 198px;
+    margin-left: 900px;
+    border-radius: 20px;
+    margin-bottom: -600px;
+    margin-top: 20px;
+}
+
+
+.img-uni2 {
+
+    filter: brightness(1);
+    max-width: 200px;
+    margin-left: 80px;
+    margin-top: 100px;
+    border-radius: 10px;
+    margin-bottom: 300px;
+    margin-top: 500;
+}
+.img-icones  {
+
+    margin-top: -700px;
+    width: 260px;
+    height: auto;
+    margin-bottom: 340px;
+  
+   
+}
+
+
+.img-icones2 {
+
+    margin-top: 160px;
+    width: 260px;
+    height: auto;
+
+  
+}
+
+.img-filme  {
+
+    filter: brightness(1);
+    margin: -200px;
+}
+
+.img-rocinha {
+
+    filter: brightness(1);
+    margin-bottom: -100px;
+   
+}
+
+.img-carnaval {
+
+    filter: brightness(1);
+    margin-bottom: -700px;
+   
+}
+.text-img-wrapper {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    gap: 20px;
+    flex-wrap: wrap;
+    /* Garante responsividade */
+}
+
+.text-side {
+    flex: 1;
+    min-width: 200px;
+}
+
+.image-side {
+    max-width: 100px;
+    text-align: center;
+}
+
+.image-side img {
+    width: 100%;
+    height: auto;
+    border-radius: 10px;
+    filter: brightness(1)
+}
+
+.image-caption {
+    font-size: 12px;
+    color: #ccc;
+    padding-left: 900px;
+    position: absolute;
+    text-align: center;
+    margin-bottom: 10px;
+    margin-top: 300px;
+
+}
+
+.image-caption2 {
+    font-size: 12px;
+    color: #ccc;
+    padding-left: 900px;
+    position: absolute;
+    text-align: right;
+    margin-bottom: 20px;
+    margin-top: 300px;
+
+
+}
+
+.arrows {
+    position: absolute;
+    bottom: 80px;
+    left: 60%;
+    transform: translateX(-10%);
+    z-index: 9999;
+    /* MUITO importante! */
+    display: flex;
+    gap: 20px;
+}
+
+.arrows button {
+    border-radius: 30px;
+    border: none;
+    padding: 19px 17px;
+    background-color: #eee4;
+    color: #eee;
+    cursor: pointer;
+    font-weight: 800px;
+    font-size: 1.5em;
+    transition: 0.3s;
+}
+
+.arrows button:hover {
+    background-color: #eee;
+    color: #000;
+}
+
+.list-item {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100vh;
+    /* altura total da tela */
+    overflow: hidden;
+}
+
+.list-item>img {
+    position: relative;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    /* cobre sem distorcer */
+    z-index: 0;
+    filter: brightness(40%);
+}
+
+.text-side {
+    flex: 1;
+    min-width: 250px;
+    max-height: 60vh;
+    /* altura máxima do bloco de texto */
+    overflow-y: auto;
+    padding-right: 10px;
+}
+
+.text-side::-webkit-scrollbar {
+    width: 6px;
+}
+
+.text-side::-webkit-scrollbar-thumb {
+    background-color: rgba(255, 255, 255, 0.3);
+    border-radius: 4px;
+}
+
+.text-side::-webkit-scrollbar-track {
+    background: transparent;
+}
+
+h3 {
+
+    font-size: 23px;
+}
+
+p {
+
+    font-size: 20px;
+    margin-top: 20px;
+
+}
+
+.bibliografia {
+    font-size: 14px;
+
+}
+
+a {
+
+    color: rgb(170, 114, 223);
+}
+
+h2 {
+
+    font-size: 30px;
+}
+
+
+h3 {
+
+    margin-top: 12px;
+}
+
